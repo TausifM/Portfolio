@@ -1,0 +1,54 @@
+.h {
+  display: flex;
+  justify-content: space-between;
+}
+.h-left {
+  width: 10%;
+}
+.h-left-wrapper img {
+  width: 150px;
+  height: 100px;
+}
+.h-middle {
+  width: 70%;
+}
+
+.navlist {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Poppins";
+  height: 50px;
+  list-style: none;
+}
+.navlist li a {
+  text-decoration: none;
+  color: rgb(16, 49, 0);
+  font-weight: 600;
+}
+.navlist li a:hover {
+  color: rgb(206, 93, 0);
+}
+
+i {
+  margin-right: 10px;
+  font-size: 16px;
+}
+.h-right {
+  width: 10%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.h-right-wrapper {
+  height: 10px;
+}
+@media screen and (max-width: 480px) {
+  .h-middle {
+    display: none;
+  }
+  .h-left-wrapper img {
+    width: 120px;
+    height: 90px;
+  }
+}

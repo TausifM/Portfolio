@@ -1,0 +1,79 @@
+.navbar i {
+  font-size: 25px;
+  color: crimson;
+}
+.navbar i:hover {
+  color: rgb(97, 11, 0);
+}
+.nav-menu {
+  background-color: rgb(28, 66, 0);
+  width: 250px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 850ms;
+  z-index: 999;
+}
+
+.nav-menu.active {
+  left: 0;
+  transition: 350ms;
+}
+
+.nav-text {
+  list-style: none;
+  padding: 10px;
+  height: 60px;
+}
+.icon {
+  font-size: 25px;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-text a {
+  text-decoration: none;
+  font-size: 18px;
+  width: 95%;
+  height: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  font: 400;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-family: "Poppins", serif;
+}
+.nav-text a:hover {
+  color: orange;
+}
+
+.nav-menu-items {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100vh;
+}
+
+li .side-tittle {
+  margin-left: 5px;
+}
+.close-btn {
+  font-size: 25px;
+  width: 100%;
+  color: white;
+  display: flex;
+  align-items: flex-end;
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .navbar {
+    padding: 0;
+    margin: 0;
+  }
+}
