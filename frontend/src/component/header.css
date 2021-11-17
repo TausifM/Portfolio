@@ -1,7 +1,6 @@
 .h {
   display: flex;
   justify-content: space-between;
-  padding-top: 10px;
 }
 .h-left {
   width: 10%;

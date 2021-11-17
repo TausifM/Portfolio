@@ -4,6 +4,7 @@
   align-items: center;
   margin: 0;
   padding: 0;
+  width: 100%;
   background-color: #fddada;
 }
 .container {
@@ -140,7 +141,11 @@
   margin: 25%;
   width: 50%;
 }
-
+.f-copy {
+  width: 99.8%;
+  padding: 1px;
+  margin: 0;
+}
 /* .meditation {
   background-image: linear-gradient(
     to top,
@@ -178,5 +183,9 @@
     border-radius: 30%;
     height: 100%;
     width: 100%;
+  }
+  .f-copy {
+    padding: 0.1px;
+    width: 99.8%;
   }
 }
