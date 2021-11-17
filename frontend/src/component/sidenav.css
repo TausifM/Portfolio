@@ -1,9 +1,9 @@
 .navbar i {
   font-size: 25px;
-  color: crimson;
+  color: #59b256;
 }
 .navbar i:hover {
-  color: rgb(97, 11, 0);
+  color: rgb(44, 121, 14);
 }
 .nav-menu {
   background-color: rgb(28, 66, 0);

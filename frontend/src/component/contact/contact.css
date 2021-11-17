@@ -73,6 +73,15 @@ a {
 a:hover {
   color: rgb(255, 166, 0);
 }
+.f-copy {
+  background-color: #a6f0a3;
+  width: 100%;
+}
+.f-copy-wraper h5 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 @media screen and (max-width: 480px) {
   .c {
     height: 120vh;
@@ -88,7 +97,7 @@ a:hover {
     font-size: 25px;
   }
   .c-info-item {
-    margin: 20px 0px;
+    margin: 10px 0px;
     width: 100%;
     font-size: 10px;
   }
@@ -107,6 +116,6 @@ a:hover {
     height: 20px;
   }
   button {
-    padding: 5px;
+    padding: 10px;
   }
 }
