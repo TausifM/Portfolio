@@ -10,7 +10,6 @@ app.use(express.urlencoded({ extended: true }));
 mongoose.connect(process.env.MONGODB_URL || "mongodb://localhost/myportfolio", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useCreateIndex: true,
 });
 app.get("/", (req, res) => {
   res.send("Server is ready");
