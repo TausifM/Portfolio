@@ -1,5 +1,8 @@
 import "./Home.css";
 import Tausif01 from "../img/tausif.png";
+import About from "./About/About";
+import ProjectList from "./projectList/ProjectList";
+import Contact from "./contact/Contact";
 const Home = () => {
   return (
     <>
@@ -43,6 +46,9 @@ const Home = () => {
           <img src={Tausif01} alt="" className="i-img" />
         </div>
       </div>
+      <About />
+      <ProjectList />
+      <Contact />
     </>
   );
 };

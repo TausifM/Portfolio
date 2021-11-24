@@ -16,19 +16,19 @@ export const SidebarData = [
   },
   {
     title: "About",
-    path: "#about",
+    path: "/about",
     icon: <FaUserFriends className="icon" />,
     cName: "nav-text",
   },
   {
     title: "Project",
-    path: "#project",
+    path: "/project",
     icon: <SiWebpack className="icon" />,
     cName: "nav-text",
   },
   {
     title: "Contact",
-    path: "#contact",
+    path: "/contact",
     icon: <FaPhone className="icon" />,
     cName: "nav-text",
   },

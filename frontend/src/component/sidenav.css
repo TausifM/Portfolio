@@ -3,10 +3,10 @@
   color: #59b256;
 }
 .navbar i:hover {
-  color: rgb(44, 121, 14);
+  color: rgb(1, 94, 100);
 }
 .nav-menu {
-  background-color: rgb(28, 66, 0);
+  background-color: rgb(1, 69, 71);
   width: 250px;
   height: 100vh;
   display: flex;
@@ -44,6 +44,7 @@
   border-radius: 4px;
   font: 400;
   display: flex;
+  color: rgb(255, 255, 255);
   align-items: center;
   justify-content: flex-end;
   font-family: "Poppins", serif;

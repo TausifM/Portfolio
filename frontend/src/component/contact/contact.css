@@ -67,8 +67,11 @@ button {
   cursor: pointer;
   font-family: "Poppins";
 }
-a {
-  color: white;
+.c-info-item a {
+  font-weight: 600;
+  font-size: 17px;
+  margin-left: 5px;
+  color: rgb(230, 155, 17);
 }
 a:hover {
   color: rgb(255, 166, 0);
@@ -117,5 +120,8 @@ a:hover {
   }
   button {
     padding: 10px;
+  }
+  .c-info-item a {
+    font-size: 10px;
   }
 }

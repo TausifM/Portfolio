@@ -22,7 +22,7 @@ const Header = () => {
           <div className="h-middle-wrapper">
             <ul className="navlist">
               <li className="navlist-link">
-                <a href="/" style={{ color: darkMode && "white" }}>
+                <a href="/">
                   <i>
                     <FaHome />
                   </i>
@@ -30,7 +30,7 @@ const Header = () => {
                 </a>
               </li>
               <li>
-                <a href="#about" style={{ color: darkMode && "white" }}>
+                <a href="/about" style={{ color: darkMode && "white" }}>
                   <i>
                     <FaUserFriends />
                   </i>
@@ -38,7 +38,7 @@ const Header = () => {
                 </a>
               </li>
               <li>
-                <a href="#projects" style={{ color: darkMode && "white" }}>
+                <a href="/projects" style={{ color: darkMode && "white" }}>
                   <i>
                     <SiWebpack />
                   </i>
@@ -46,7 +46,7 @@ const Header = () => {
                 </a>
               </li>
               <li>
-                <a href="#contact" style={{ color: darkMode && "white" }}>
+                <a href="/contact" style={{ color: darkMode && "white" }}>
                   <i>
                     <FaPhone />
                   </i>
