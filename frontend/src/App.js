@@ -13,6 +13,7 @@ import Toggle from "./component/toggle/Toggle";
 import { ThemeContext } from "./context";
 import SignInScreen from "./screen/SignInScreen";
 import { signout } from "./actions/userAction";
+import RegisterScreen from "./screen/RegisterScreen";
 
 function App() {
   const theme = useContext(ThemeContext);
@@ -65,6 +66,11 @@ function App() {
               <Route path="/project" element={<ProjectList />}></Route>
               <Route path="/contact" element={<Contact />}></Route>
               <Route path="/signin" exact element={<SignInScreen />}></Route>
+              <Route
+                path="/register"
+                exact
+                element={<RegisterScreen />}
+              ></Route>
             </Routes>
           </main>
 
