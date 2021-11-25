@@ -1,6 +1,14 @@
 import { createStore, applyMiddleware, compose, combineReducers } from "redux";
 import thunk from "redux-thunk";
-import { userSignReducer } from "./reducers/userReducer";
+import {
+  userDeleteReducer,
+  userDetailsReducer,
+  userListReducer,
+  userRegisterReducer,
+  userSigninReducer,
+  userUpdateProfileReducer,
+  userUpdateReducer,
+} from "./reducers/userReducer";
 const initialState = {
   userSignin: {
     userInfo: localStorage.getItem("userInfo")
@@ -11,7 +19,13 @@ const initialState = {
   },
 };
 const reducer = combineReducers({
-  userSignin: userSignReducer,
+  userSignin: userSigninReducer,
+  userRegister: userRegisterReducer,
+  userDetails: userDetailsReducer,
+  userUpdateProfile: userUpdateProfileReducer,
+  userUpdate: userUpdateReducer,
+  userList: userListReducer,
+  userDelete: userDeleteReducer,
 });
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
