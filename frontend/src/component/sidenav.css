@@ -1,9 +1,9 @@
 .navbar i {
   font-size: 25px;
-  color: #59b256;
+  color: #fd9274;
 }
 .navbar i:hover {
-  color: rgb(1, 94, 100);
+  color: rgb(129, 88, 35);
 }
 .nav-menu {
   background-color: rgb(1, 69, 71);
@@ -50,7 +50,7 @@
   font-family: "Poppins", serif;
 }
 .nav-text a:hover {
-  color: orange;
+  color: rgba(255, 183, 29, 0.897);
 }
 
 .nav-menu-items {

@@ -63,7 +63,8 @@ const Contact = () => {
         </div>
         <div className="c-right">
           <p className="c-desc">
-            <b>What's your story?</b>
+            <b style={{ fontSize: "18px" }}>What's your story?</b>
+            <br />
             Get in touch. Always ready to help for your project.
           </p>
           <form ref={formRef} onSubmit={handleSubmit}>
@@ -111,7 +112,7 @@ const Contact = () => {
               placeholder="Message"
               rows="5"
               required={true}
-              style={{ backgroundColor: darkMode && "#333" }}
+              style={{ backgroundColor: darkMode && "#333", height: "25vh" }}
             ></textarea>
             <button type="submit" value="Send">
               Send

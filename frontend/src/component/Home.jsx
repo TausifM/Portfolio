@@ -1,9 +1,14 @@
 import "./Home.css";
 import Tausif01 from "../img/tausif.png";
+import Tausif02 from "../img/tausif2.png";
 import About from "./About/About";
 import ProjectList from "./projectList/ProjectList";
 import Contact from "./contact/Contact";
+import { useContext } from "react";
+import { ThemeContext } from "../context";
 const Home = () => {
+  const theme = useContext(ThemeContext);
+  const darkMode = theme.state.darkMode;
   return (
     <>
       <div className="i">
@@ -47,6 +52,27 @@ const Home = () => {
         </div>
       </div>
       <About />
+      <div
+        className="i-gallery"
+        style={{ backgroundColor: darkMode ? "#485461" : "#fbefef" }}
+      >
+        <div className="i-gallery-right">
+          <div className="i-gallery-right-wrapper">
+            <img src={Tausif02} alt="" className="i-gallery-img" />
+          </div>
+        </div>
+        <div className="i-gallery-left">
+          <div className="i-gallery-left-wrapper">
+            <h2>Skills and Experience</h2>
+            <p>
+              “Over the past five years as a Web developer, Taluka
+              Co-ordinators, I've learn HTML5, CSS, JavaScript, React Js, some
+              Node Js, MongoDB, Express Js, etc."
+            </p>
+          </div>
+        </div>
+      </div>
+
       <ProjectList />
       <Contact />
     </>

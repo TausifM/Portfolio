@@ -7,7 +7,7 @@
 }
 .h-left-wrapper img {
   width: 160px;
-  height: 100px;
+  height: 105px;
 }
 .h-middle {
   width: 70%;
@@ -22,7 +22,10 @@
   list-style: none;
 }
 .navlist li a {
+  padding-top: 20px;
   text-decoration: none;
+  display: flex;
+  justify-content: center;
   color: rgb(16, 49, 0);
   font-weight: 600;
 }

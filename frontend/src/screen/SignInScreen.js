@@ -1,29 +1,35 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { signin } from "../actions/userAction";
 import LoadingBox from "../Loader/LoadingBox";
 import MessageBox from "../Loader/MessageBox";
-import { useNavigate } from "react-router-dom";
 import "./signin.css";
-const SignInScreen = () => {
-  const userSignin = useSelector((state) => state.userSignin);
-  const { loading, userInfo, error } = userSignin;
+export default function SigninScreen(props) {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const { search } = useLocation();
+  const redirectInUrl = new URLSearchParams(search).get("redirect");
+  const redirect = redirectInUrl ? redirectInUrl : "/";
+
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo, loading, error } = userSignin;
+
   const dispatch = useDispatch();
-  const history = useNavigate();
-  const submitHandler = (event) => {
-    event.preventDefault();
+  const submitHandler = (e) => {
+    e.preventDefault();
     dispatch(signin(email, password));
   };
   useEffect(() => {
     if (userInfo) {
-      history("/");
+      navigate(redirect);
     }
-  }, [history, userInfo]);
+  }, [navigate, redirect, userInfo]);
   return (
     <div>
-      <form onSubmit={submitHandler} className="form">
+      <form className="form" onSubmit={submitHandler}>
         <div>
           <h1>Sign In</h1>
         </div>
@@ -58,11 +64,14 @@ const SignInScreen = () => {
         <div>
           <label />
           <div>
-            New customer? <a href="/register">Create your account</a>
+            New customer..?
+            <br />
+            <Link to={`/register?redirect=${redirect}`}>
+              Create your account
+            </Link>
           </div>
         </div>
       </form>
     </div>
   );
-};
-export default SignInScreen;
+}

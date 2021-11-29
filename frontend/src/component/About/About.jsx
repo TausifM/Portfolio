@@ -18,13 +18,14 @@ const About = () => {
         </div>
         <div className="a-right">
           <div className="a-tittle">About Me</div>
-          <p className="a-sub">
-            lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </p>
+          <b className="a-sub">Introduction</b>
           <p className="a-desc">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia,
-            assumenda labore. Rerum commodi incidunt pariatur obcaecati nisi
-            iure voluptatem provident.
+            “I’m Tausif Sheikh, and I design websites for small businesses. I
+            have 5+ years of experience in Social, & technical like Web design
+            and Development. While I’m doing job in Care India, Paani
+            Foundation, Arctic Infra Tech Solutions, Nielson, etc, I help build
+            websites for people who want to sell their products, design logo,
+            creative design”{" "}
           </p>
           <div className="a-award">
             <img src={Degree} alt="" className="a-award-img" />

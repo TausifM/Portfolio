@@ -38,7 +38,7 @@
   margin-right: 20px;
 }
 .c-desc {
-  font-weight: 200;
+  font-weight: 400;
 }
 form {
   margin: 10px 0px;
@@ -66,6 +66,9 @@ button {
   font-weight: 500;
   cursor: pointer;
   font-family: "Poppins";
+}
+button:hover {
+  background-color: #4d9d4d;
 }
 .c-info-item a {
   font-weight: 600;
@@ -98,6 +101,7 @@ a:hover {
   }
   .c-tittle {
     font-size: 25px;
+    width: 100%;
   }
   .c-info-item {
     margin: 10px 0px;
@@ -106,6 +110,7 @@ a:hover {
   }
   .c-desc {
     font-size: 14px;
+    font-weight: 400;
   }
   form {
     display: flex;

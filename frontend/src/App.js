@@ -14,6 +14,7 @@ import { ThemeContext } from "./context";
 import SignInScreen from "./screen/SignInScreen";
 import { signout } from "./actions/userAction";
 import RegisterScreen from "./screen/RegisterScreen";
+import ProfileScreen from "./screen/ProfileScreen";
 
 function App() {
   const theme = useContext(ThemeContext);
@@ -35,10 +36,10 @@ function App() {
           }}
         >
           <header>
-            <div>
+            <div className="s">
               {userInfo ? (
                 <div className="dropdown">
-                  <Link to="#">
+                  <Link to="/profile">
                     {userInfo.name}
                     <i>
                       <FaCaretDown />
@@ -53,7 +54,9 @@ function App() {
                   </ul>
                 </div>
               ) : (
-                <Link to="/signin">Sign In</Link>
+                <Link to="/signin" className="signin">
+                  Sign In
+                </Link>
               )}
             </div>
             <Toggle />
@@ -63,7 +66,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />}></Route>
               <Route path="/about" element={<About />}></Route>
-              <Route path="/project" element={<ProjectList />}></Route>
+              <Route path="/projects" element={<ProjectList />}></Route>
               <Route path="/contact" element={<Contact />}></Route>
               <Route path="/signin" exact element={<SignInScreen />}></Route>
               <Route
@@ -71,9 +74,10 @@ function App() {
                 exact
                 element={<RegisterScreen />}
               ></Route>
+
+              <Route path="/profile" element={<ProfileScreen />}></Route>
             </Routes>
           </main>
-
           <footer>
             <Demo />
           </footer>

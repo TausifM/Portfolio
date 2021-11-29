@@ -1,14 +1,15 @@
-import { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { USER_UPDATE_PROFILE_RESET } from "../constants/userConstants";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { detailsUser, updateUserProfile } from "../actions/userAction";
 import LoadingBox from "../Loader/LoadingBox";
 import MessageBox from "../Loader/MessageBox";
+import { USER_UPDATE_PROFILE_RESET } from "../constants/userConstants";
+
 export default function ProfileScreen() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState();
+  const [confirmPassword, setConfirmPassword] = useState("");
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
   const userDetails = useSelector((state) => state.userDetails);
@@ -29,8 +30,9 @@ export default function ProfileScreen() {
       setEmail(user.email);
     }
   }, [dispatch, userInfo._id, user]);
-  const updatesubmitHandler = (e) => {
+  const submitHandler = (e) => {
     e.preventDefault();
+    // dispatch update profile
     if (password !== confirmPassword) {
       alert("Password and Confirm Password Are Not Matched");
     } else {
@@ -44,9 +46,26 @@ export default function ProfileScreen() {
       );
     }
   };
+  function myFunction() {
+    const x = document.getElementById("confirmPassword");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+  function myFunction2() {
+    const x = document.getElementById("password");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+
   return (
-    <>
-      <form className="form" onSubmit={updatesubmitHandler}>
+    <div>
+      <form className="form" onSubmit={submitHandler}>
         <div>
           <h1>User Profile</h1>
         </div>
@@ -93,17 +112,28 @@ export default function ProfileScreen() {
                 placeholder="Enter password"
                 onChange={(e) => setPassword(e.target.value)}
               ></input>
+              <input
+                className="checkbox-p"
+                type="checkbox"
+                onClick={(e) => myFunction2(e.target.value)}
+              />
+              Show Password
             </div>
             <div>
-              <label htmlFor="confirmPassword">confirm Password</label>
+              <label htmlFor="confirmPassword">Confirm Password</label>
               <input
                 id="confirmPassword"
                 type="password"
                 placeholder="Enter confirm password"
                 onChange={(e) => setConfirmPassword(e.target.value)}
               ></input>
+              <input
+                className="checkbox-p"
+                type="checkbox"
+                onClick={(e) => myFunction(e.target.value)}
+              />
+              Show Password
             </div>
-
             <div>
               <label />
               <button className="primary" type="submit">
@@ -113,6 +143,6 @@ export default function ProfileScreen() {
           </>
         )}
       </form>
-    </>
+    </div>
   );
 }

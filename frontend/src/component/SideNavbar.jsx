@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./sidenav.css";
-import { FaHamburger } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa";
 import { FaUserFriends } from "react-icons/fa";
 import { SiWebpack } from "react-icons/si";
@@ -41,7 +41,7 @@ function SideNavbar() {
     <div>
       <div className="navbar">
         <i>
-          <FaHamburger onClick={showSidebar} alt="menu-btn" />
+          <FaBars onClick={showSidebar} alt="menu-btn" />
         </i>
       </div>
       <nav className={sidebar ? "nav-menu active" : "nav-menu"}>

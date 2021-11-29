@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { register } from "../actions/userAction";
 import LoadingBox from "../Loader/LoadingBox";
 import MessageBox from "../Loader/MessageBox";
-import { useNavigate } from "react-router";
+
 export default function RegisterScreen(props) {
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const history = useNavigate();
+  const { search } = useLocation();
+  const redirectInUrl = new URLSearchParams(search).get("redirect");
+  const redirect = redirectInUrl ? redirectInUrl : "/";
 
   const userRegister = useSelector((state) => state.userRegister);
   const { userInfo, loading, error } = userRegister;
@@ -27,9 +30,9 @@ export default function RegisterScreen(props) {
   };
   useEffect(() => {
     if (userInfo) {
-      history("/signin");
+      navigate(redirect);
     }
-  }, [history, userInfo]);
+  }, [navigate, redirect, userInfo]);
   return (
     <div>
       <form className="form" onSubmit={submitHandler}>
@@ -87,8 +90,9 @@ export default function RegisterScreen(props) {
         <div>
           <label />
           <div>
-            Already have an account?{" "}
-            <Link to={`/signin?redirect=${history}`}>Sign-In</Link>
+            Already have an account?
+            <br />
+            <Link to={`/signin?redirect=${redirect}`}>Sign-In</Link>
           </div>
         </div>
       </form>
