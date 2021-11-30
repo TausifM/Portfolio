@@ -4,10 +4,13 @@ const mongoose = require("mongoose");
 const userRouter = require("./router/userRouter.js");
 const path = require("path");
 const dotenv = require("dotenv");
+const cookieParser = require("cookie-parser");
+const bodyParser = require("body-parser");
 dotenv.config();
 const app = express();
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+app.use(bodyParser.urlencoded({ extended: true }));
 mongoose.connect(
   "mongodb+srv://Tausif01:Tausif123Shama@cluster0.xsmwf.mongodb.net/PUser?retryWrites=true&w=majority",
   {
@@ -15,9 +18,7 @@ mongoose.connect(
     useUnifiedTopology: true,
   }
 );
-app.get("/", (req, res) => {
-  res.send("Server is ready");
-});
+
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
 });
@@ -33,3 +34,6 @@ const httpServer = http.Server(app);
 httpServer.listen(port, () => {
   console.log(`Serve at http://localhost:${port}`);
 });
+// const server = app.listen(process.env.PORT, () => {
+//   console.log(`Server is working on http://localhost:${process.env.PORT}`);
+// });
