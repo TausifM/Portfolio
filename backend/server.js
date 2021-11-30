@@ -24,6 +24,11 @@ app.use((err, req, res, next) => {
 app.use("/api/users", userRouter);
 const port = process.env.PORT || 5010;
 
+app.use(express.static(path.join(__dirname, "../frontend/build")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
+});
 const httpServer = http.Server(app);
 httpServer.listen(port, () => {
   console.log(`Serve at http://localhost:${port}`);
