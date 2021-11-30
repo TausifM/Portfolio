@@ -22,12 +22,12 @@ app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
 });
 app.use("/api/users", userRouter);
-const port = process.env.PORT || 5010;
-
+const port = process.env.PORT || 5020;
+const __dirname = path.resolve();
 app.use(express.static(path.join(__dirname, "../frontend/build")));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
+  res.sendFile(path.join(__dirname, "../frontend/build/index.html"));
 });
 const httpServer = http.Server(app);
 httpServer.listen(port, () => {
