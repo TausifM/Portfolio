@@ -1,10 +1,10 @@
+const http = require("http");
+const express = require("express");
+const mongoose = require("mongoose");
+const userRouter = require("./router/userRouter.js");
+const path = require("path");
+const dotenv = require("dotenv");
 dotenv.config();
-import http from "http";
-import express from "express";
-import mongoose from "mongoose";
-import dotenv from "dotenv";
-import userRouter from "./router/userRouter.js";
-import path from "path";
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -22,12 +22,12 @@ app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
 });
 app.use("/api/users", userRouter);
-const port = process.env.PORT || 5020;
-const __dirname = path.resolve();
+const port = process.env.PORT || 5015;
+
 app.use(express.static(path.join(__dirname, "../frontend/build")));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/build/index.html"));
+  res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
 });
 const httpServer = http.Server(app);
 httpServer.listen(port, () => {
